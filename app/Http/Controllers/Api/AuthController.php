@@ -18,8 +18,7 @@ class AuthController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
-        // Remove this line
-        // dd($validated);
+
         $user = User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
@@ -48,7 +47,7 @@ class AuthController extends Controller
                 'email' => ['The provided credentials are incorrect.'],
             ]);
         }
-
+        dd($user);
         $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()->json([

@@ -99,8 +99,8 @@ class TaskController extends ApiBaseController
         } catch (Exception $ex) {
             return $this->sendError(
                 errors: $ex->getMessage(),
-                message: 'Something went wrong ',
-                code: 203
+                message: 'Something went wrong',
+                code: 500
             );
         }
     }
@@ -115,12 +115,11 @@ class TaskController extends ApiBaseController
                 status: true,
                 statusCode: 200
             );
-            return response()->json($task);
         } catch (Exception $ex) {
             return $this->sendError(
                 errors: $ex->getMessage(),
-                message: 'Something went wrong ',
-                code: 203
+                message: 'Something went wrong',
+                code: 500
             );
         }
     }
@@ -138,8 +137,8 @@ class TaskController extends ApiBaseController
         } catch (Exception $ex) {
             return $this->sendError(
                 errors: $ex->getMessage(),
-                message: 'Something went wrong ',
-                code: 203
+                message: 'Something went wrong',
+                code: 500
             );
         }
     }
