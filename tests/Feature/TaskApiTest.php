@@ -50,19 +50,27 @@ class TaskApiTest extends TestCase
         $response
             ->assertStatus(200)
             ->assertJsonStructure([
+                'status',
+                'message',
                 'data' => [
-                    '*' => [
-                        'id',
-                        'title',
-                        'description',
-                        'due_date',
-                        'status',
-                        'priority',
-                        'user_id',
-                        'created_at',
-                        'updated_at',
+                    'data' => [
+                        '*' => [
+                            'id',
+                            'title',
+                            'description',
+                            'due_date',
+                            'status',
+                            'priority',
+                            'user_id',
+                            'created_at',
+                            'updated_at',
+                        ],
                     ],
-                ],
+                    'current_page',
+                    'last_page',
+                    'per_page',
+                    'total'
+                ]
             ]);
     }
 
