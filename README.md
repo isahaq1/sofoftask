@@ -5,12 +5,12 @@ update Composer
 create a ".env" file and add your database config data
 
 Build the DB: create a Database named "what_you_want" and add db info to .env
-//generate key
+# generate key
 php artisan key:generate
-//migrate database
+# migrate database
 Migrate all the Tables: php artisan migrate
-//if you want to test run this following command
+# if you want to test run this following command
 php artisan test
-//run server
+# run server
 php artisan serve
-//test api throw postman or others
+#test api throw postman or others
