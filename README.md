@@ -14,3 +14,11 @@ php artisan test
 # run server
 php artisan serve
 #test api throw postman or others
+you should use bearer token in authorization
+#what you check?
+1.User Registration
+2.Login
+3.Create Task
+4.Task List
+5.Assign Task
+6.Edit task
