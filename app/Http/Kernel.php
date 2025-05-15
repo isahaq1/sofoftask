@@ -9,6 +9,7 @@ class Kernel extends HttpKernel
     protected $middleware = [
         // ... existing code ...
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        \Illuminate\Http\Middleware\HandleCors::class,
     ];
 
     protected $routeMiddleware = [

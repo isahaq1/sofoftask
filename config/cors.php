@@ -5,8 +5,14 @@ return [
     'allowed_methods' => ['*'],
     'allowed_origins' => ['*'],
     'allowed_origins_patterns' => [],
-    'allowed_headers' => ['*'],
-    'exposed_headers' => [],
+    'allowed_headers' => [
+        'X-CSRF-TOKEN',
+        'Content-Type',
+        'X-Requested-With',
+        'Authorization',
+        'Accept',
+    ],
+    'exposed_headers' => ['X-CSRF-TOKEN'],
     'max_age' => 0,
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 ];
