@@ -102,6 +102,31 @@ class TaskController extends ApiBaseController
         }
     }
 
+    public function changeStatus(Request $request, Task $task)
+    {
+        try {
+            $validated = $request->validate([
+                'status' => 'required|in:Todo,In Progress,Done'
+            ]);
+
+            $task = $this->taskService->changeTaskStatus($task, $validated['status']);
+
+            return $this->sendSuccess(
+                data: new TaskResource($task),
+                message: 'Task status successfully updated',
+                statusCode: 200
+            );
+        } catch (Exception $ex) {
+            return $this->sendError(
+                errors: $ex->getMessage(),
+                message: 'Something went wrong',
+                code: 500
+            );
+        }
+    }
+
+    
+
     public function destroy(Task $task)
     {
         try {

@@ -45,7 +45,7 @@ class TaskRepository implements TaskRepositoryInterface
 
     public function delete(Task $task): bool
     {
-        return $task->delete();
+        return $task->forceDelete();
     }
 
     public function assignUser(Task $task, int $userId): bool

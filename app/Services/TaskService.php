@@ -40,4 +40,10 @@ class TaskService
     {
         return $this->taskRepository->assignUser($task, $userId);
     }
+
+    public function changeTaskStatus(Task $task, string $status): Task
+    {
+        $this->taskRepository->update($task, ['status' => $status]);
+        return $task->fresh();
+    }
 }

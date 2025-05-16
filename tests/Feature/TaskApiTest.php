@@ -105,6 +105,19 @@ class TaskApiTest extends TestCase
             ->assertJsonFragment($updateData);
     }
 
+    public function test_can_change_task_status(): void
+    {
+        $updateData = ['status' => 'Done'];
+
+        $response = $this
+            ->actingAs($this->user)
+            ->patchJson("/api/tasks/{$this->task->id}/status", $updateData);
+
+        $response
+            ->assertStatus(200)
+            ->assertJsonFragment($updateData);
+    }
+  
     public function test_user_can_delete_task(): void
     {
         $response = $this
