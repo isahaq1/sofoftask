@@ -22,3 +22,5 @@ you should use bearer token in authorization
 4.Task List
 5.Assign Task
 6.Edit task
+7.Delete Task
+8.Change Task Status
